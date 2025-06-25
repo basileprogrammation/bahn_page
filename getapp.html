@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Téléchargement de l’application</title>
+  <style>
+    body{font-family:system-ui,sans-serif;display:flex;justify-content:center;align-items:center;
+         min-height:100vh;margin:0;background:#f9f9f9;text-align:center;padding:1rem;}
+    .card{background:#fff;border-radius:1rem;box-shadow:0 4px 16px rgba(0,0,0,.1);padding:2rem;max-width:26rem;}
+    h1{font-size:1.5rem;margin-bottom:1rem;}
+    p{line-height:1.4;}
+  </style>
+  <script>
+    // URL Android : à adapter
+    const androidURL = "https://play.google.com/store/apps/details?id=com.bahn.app";
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isiOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+
+    if (!isiOS) {
+      // Rediriger immédiatement tout sauf iOS vers Google Play
+      window.location.replace(androidURL);
+    }
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1>Version iOS bientôt disponible !</h1>
+    <p>La version iPhone/iPad est en cours de validation.<br>
+       Merci de votre patience 😊</p>
+  </div>
+</body>
+</html>
